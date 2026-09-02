@@ -9,3 +9,4 @@ void print(int i,int n){
 int main(){
     print(1,5);
 }
+//simillar to print 1 to N only difference is position of print function and cout

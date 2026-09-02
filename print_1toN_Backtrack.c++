@@ -13,3 +13,5 @@ int main(){
 //this is backtracking first the function is getting a call till the base condition hits
 //then it prints cout 
 //first function is called then action is done
+
+//simillar to print N to 1 only difference is position of print function and cout
