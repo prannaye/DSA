@@ -12,3 +12,4 @@ int main(){
 
 //this is backtracking first the function is getting a call till the base condition hits
 //then it prints cout 
+//first function is called then action is done
