@@ -21,17 +21,19 @@ vector<int> reverse_2pointers(vector<int>& arr){
     }
     return arr;
 }
-void reverse_rec(vector<int>& arr,int l,int r){
-    int n = arr.size();
-    if(l>=r) return;
+void reverse_rec(vector<int>& arr,int i,int n){
+   
+    if(i>=n/2) return;
 
-    swap(arr[l],arr[r]);
-    reverse_rec(arr,l+1,r-1);
+    swap(arr[i],arr[n-i-1]);
+    reverse_rec(arr,i+1,n);
 }
 
 int main(){
     vector<int> arr ={1,2,3,4,5};
-    reverse_rec(arr,0,4);
+    int n = arr.size();
+    reverse_rec(arr,0,n);
+
     for(int i=0;i<arr.size();i++){
         cout<<arr[i];
     }
