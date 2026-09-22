@@ -5,7 +5,7 @@ using namespace std;
 class Node{
     public:
     int data;
-    vector<Node*> children;
+    vector<Node*> children;//list of children a node has
 
     Node(int x){
         data = x;
@@ -26,9 +26,20 @@ void printParent(Node* node,Node* parent){
     else {
         cout<<node->data<<" -> "<<parent->data<<endl;
     }
-    for(auto child : node->children){
+    for(auto child : node->children){//go to every child stored by this node
         printParent(child,node);
     }
+}
+
+// Function to print children of each node
+void printChildren(Node* node) {
+    cout << node->data << " -> ";
+    for (auto child : node->children)
+        cout << child->data << " ";
+    cout << endl;
+
+    for (auto child : node->children)
+        printChildren(child);
 }
 
 int main(){
@@ -45,4 +56,7 @@ Node* n4 = new Node(5);
 
     cout << "Parents of each node:" << endl;
     printParent(root, nullptr);
+
+    cout << "Children of each node:" << endl;
+    printChildren(root);
 }
