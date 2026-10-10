@@ -1,5 +1,5 @@
 #include<iostream>
-//#include<stack>
+#include<stack>
 using namespace std;
 
 class QueueImp{
@@ -8,7 +8,8 @@ class QueueImp{
     int queue[size];
     int currsize = 0;
     int start , end = -1;
-    
+    //for checking edge case of any operations check at 
+    //what value of input u cannot do the operation
     void push(int x){
         if(currsize==size) return;
         if(currsize==0) start = end = 0;
